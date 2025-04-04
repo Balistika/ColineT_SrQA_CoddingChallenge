@@ -74,8 +74,14 @@ A  quality gate can also be configured as a required check for pull request merg
 
 - For large projects or long tests:
     - Use matrix builds to run EditMode and PlayMode in parallel.
-    - Cache the Unity Library folder for faster builds.
-    - Use self-hosted runners with GPU support for performance profiling.
+    - Use self-hosted runners with GPU support for performance profiling (FPS checks).
 
+#### 7. **Future Improvements and Optional Enhancements**
 
+- Integrate linting and code style validation using tools like `dotnet-format`&#x20;
 
+- Implement caching using `actions/cache` to save build artifacts like `.Library/`, improving test and build speed.
+
+- Deploy WebGL builds automatically to GitHub Pages or Vercel for live preview of latest builds.
+
+- Integrate notifications to Teams or Slack channels for build or test failures.
