@@ -1,10 +1,11 @@
-using Platformer.Mechanics;
+using Platformer.Services;
+using UnityEngine;
 
 namespace Platformer.Core
 {
     public class GroundedState : BaseJumpState
     {
-        public GroundedState(PlayerController playerController, JumpStateMachine jumpStateMachine) : base(playerController, jumpStateMachine)
+        public GroundedState(IPlayerController playerController) : base(playerController)
         {
         }
 
@@ -14,7 +15,7 @@ namespace Platformer.Core
         {
             if (playerController.IsGrounded && playerController.InputController.IsJumpPressed())
             {
-                jumpStateMachine.SetState(new PrepareToJumpState(playerController, jumpStateMachine));
+                playerController.JumpStateMachine.SetState(new PrepareToJumpState(playerController));
             }
         }
 

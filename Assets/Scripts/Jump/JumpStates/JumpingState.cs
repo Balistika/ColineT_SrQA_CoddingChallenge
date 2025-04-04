@@ -1,12 +1,12 @@
 using Platformer.Gameplay;
-using Platformer.Mechanics;
+using Platformer.Services;
 using static Platformer.Core.Simulation;
 
 namespace Platformer.Core
 {
     public class JumpingState : BaseJumpState
     {
-        public JumpingState(PlayerController playerController, JumpStateMachine jumpStateMachine) : base(playerController, jumpStateMachine)
+        public JumpingState(IPlayerController playerController) : base(playerController)
         {
         }
 
@@ -17,7 +17,7 @@ namespace Platformer.Core
             if (!playerController.IsGrounded)
             {
                 Schedule<PlayerJumped>().player = playerController;
-                jumpStateMachine.SetState(new InFlightState(playerController, jumpStateMachine));
+                playerController.JumpStateMachine.SetState(new InFlightState(playerController));
             }
         }
 

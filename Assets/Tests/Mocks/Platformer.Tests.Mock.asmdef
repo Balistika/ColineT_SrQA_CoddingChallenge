@@ -1,0 +1,16 @@
+{
+  "name": "Platformer.Tests.Mock",
+  "references": [
+    "Platformer.Game"
+  ],
+  "includePlatforms": [ "Editor" ],
+  "optionalUnityReferences": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "testAssemblies": true
+}

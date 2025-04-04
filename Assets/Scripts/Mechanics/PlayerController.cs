@@ -2,7 +2,6 @@
 using Platformer.Model;
 using Platformer.Core;
 using Platformer.Services;
-using Zenject;
 
 namespace Platformer.Mechanics
 {
@@ -25,8 +24,8 @@ namespace Platformer.Mechanics
         /// </summary>
         public float jumpTakeOffSpeed = 7;
         
-        /*internal new*/ public Collider2D collider2d;
-        /*internal new*/ public AudioSource audioSource;
+        public Collider2D collider2d;
+        public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
         
@@ -39,10 +38,13 @@ namespace Platformer.Mechanics
         public void EnableControl(bool enabled) => controlEnabled = enabled;
         
         private IInputController inputController;
-        public IInputController InputController => inputController;
-        
         private JumpStateMachine jumpStateMachine;
+
+        public IInputController InputController => inputController;
         public JumpStateMachine JumpStateMachine => jumpStateMachine;
+        
+        public AudioSource AudioSource => audioSource;
+        public AudioClip JumpAudio => jumpAudio;
 
         void Awake()
         {
@@ -56,6 +58,10 @@ namespace Platformer.Mechanics
         public void Setup(IInputController input)
         {
             inputController = input;
+        }
+
+        void Start()
+        {
             jumpStateMachine = new JumpStateMachine();
             ResetJumpState();
         }
@@ -90,7 +96,7 @@ namespace Platformer.Mechanics
         
         public void ResetJumpState()
         {
-            jumpStateMachine.SetState(new GroundedState(this, jumpStateMachine));
+            jumpStateMachine.SetState(new GroundedState(this));
         }
         
         public void TriggerStopJump()
@@ -100,7 +106,7 @@ namespace Platformer.Mechanics
                 velocity.y *= model.jumpDeceleration;
             }
         }
-        
+
         public void ApplyJumpImpulse()
         {
             velocity.y = jumpTakeOffSpeed * model.jumpModifier;

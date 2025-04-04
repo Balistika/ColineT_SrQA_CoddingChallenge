@@ -1,0 +1,19 @@
+{
+    "name": "Platformer.Tests.Editor",
+    "references": [
+        "Platformer.Game",
+        "Zenject",
+        "Zenject-TestFramework",
+        "Platformer.Tests.Mock"
+    ],
+    "includePlatforms": [ "Editor" ],
+    "optionalUnityReferences": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false,
+    "testAssemblies": true
+}

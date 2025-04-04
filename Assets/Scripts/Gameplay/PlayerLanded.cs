@@ -1,5 +1,6 @@
 using Platformer.Core;
 using Platformer.Mechanics;
+using Platformer.Services;
 
 namespace Platformer.Gameplay
 {
@@ -9,7 +10,7 @@ namespace Platformer.Gameplay
     /// <typeparam name="PlayerLanded"></typeparam>
     public class PlayerLanded : Simulation.Event<PlayerLanded>
     {
-        public PlayerController player;
+        public IPlayerController player;
 
         public override void Execute()
         {

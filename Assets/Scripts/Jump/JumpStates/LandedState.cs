@@ -1,19 +1,19 @@
-using Platformer.Mechanics;
+using Platformer.Services;
 
 namespace Platformer.Core
 {
     public class LandedState : BaseJumpState
     {
-        public LandedState(PlayerController playerController, JumpStateMachine jumpStateMachine) : base(playerController, jumpStateMachine)
+        public LandedState(IPlayerController playerController) : base(playerController)
         {
         }
 
-        public override void Enter()
-        {
-            jumpStateMachine.SetState(new GroundedState(playerController, jumpStateMachine));
-        }
+        public override void Enter() { }
 
-        public override void Update() { }
+        public override void Update()
+        {
+            playerController.JumpStateMachine.SetState(new GroundedState(playerController));
+        }
         public override void Exit() { }
     }
 }

@@ -1,20 +1,20 @@
-using Platformer.Mechanics;
+using Platformer.Services;
 
 namespace Platformer.Core
 {
     public class PrepareToJumpState : BaseJumpState
     {
-        public PrepareToJumpState(PlayerController playerController, JumpStateMachine jumpStateMachine) : base(playerController, jumpStateMachine)
+        public PrepareToJumpState(IPlayerController playerController) : base(playerController)
         {
         }
 
-        public override void Enter()
+        public override void Enter() { }
+
+        public override void Update()
         {
             playerController.ApplyJumpImpulse();
-            jumpStateMachine.SetState(new JumpingState(playerController, jumpStateMachine));
+            playerController.JumpStateMachine.SetState(new JumpingState(playerController));
         }
-
-        public override void Update() { }
         public override void Exit() { }
     }
 }

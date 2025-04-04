@@ -1,0 +1,30 @@
+{
+    "name": "Platformer.Test.PlayMode",
+    "rootNamespace": "",
+    "references": [
+        "Zenject",
+        "Platformer.Game",
+        "Zenject-TestFramework",
+        "Platformer.Tests.Mock",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor",
+        "EmbeddedLinux",
+        "LinuxStandalone64",
+        "CloudRendering",
+        "macOSStandalone",
+        "macOSStandaloneServer",
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

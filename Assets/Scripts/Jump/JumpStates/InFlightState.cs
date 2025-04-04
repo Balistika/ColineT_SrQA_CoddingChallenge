@@ -1,5 +1,5 @@
 using Platformer.Gameplay;
-using Platformer.Mechanics;
+using Platformer.Services;
 using static Platformer.Core.Simulation;
 
 namespace Platformer.Core
@@ -8,21 +8,18 @@ namespace Platformer.Core
     {
         private bool jumpStopped = false;
         
-        public InFlightState(PlayerController playerController, JumpStateMachine jumpStateMachine) : base(playerController, jumpStateMachine)
+        public InFlightState(IPlayerController playerController) : base(playerController)
         {
         }
 
-        public override void Enter()
-        {
-            
-        }
+        public override void Enter() { }
 
         public override void Update()
         {
             if (playerController.IsGrounded)
             {
                 Schedule<PlayerLanded>().player = playerController;
-                jumpStateMachine.SetState(new LandedState(playerController, jumpStateMachine));
+                playerController.JumpStateMachine.SetState(new LandedState(playerController));
             }
             else if (playerController.InputController.IsJumpReleased() && !jumpStopped)
             {

@@ -1,16 +1,15 @@
 using Platformer.Mechanics;
+using Platformer.Services;
 
 namespace Platformer.Core
 {
     public abstract class BaseJumpState
     {
-        protected readonly PlayerController playerController;
-        protected readonly JumpStateMachine jumpStateMachine;
+        protected readonly IPlayerController playerController;
         
-        public BaseJumpState(PlayerController playerController, JumpStateMachine jumpStateMachine)
+        public BaseJumpState(IPlayerController playerController)
         {
             this.playerController = playerController;
-            this.jumpStateMachine = jumpStateMachine;
         }
         
         public abstract void Enter();

@@ -1,17 +1,14 @@
 using Platformer.Mechanics;
-using UnityEngine;
 using Zenject;
 
 namespace Platformer.Services
 {
     public class ServicesInstaller : MonoInstaller
     {
-        [SerializeField] 
-        private PlayerController playerController;
-
         public override void InstallBindings()
         {
             var input = new InputController();
+            var playerController = FindFirstObjectByType<PlayerController>();
             playerController.Setup(input);
 
             Container.Bind<IInputController>().FromInstance(input).AsSingle();
