@@ -2,7 +2,6 @@ using System.Collections;
 using NUnit.Framework;
 using Platformer.Mechanics;
 using Tests.Mocks;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
@@ -146,7 +145,7 @@ public class PlayerIntegrationFromSampleSceneTest
         yield return new WaitForFixedUpdate();
         yield return new WaitForSeconds(0.1f);
 
-        Assert.IsFalse(token.IsCollected, "L'ennemi ne devrait pas collecter le token.");
+        Assert.IsFalse(token.IsCollected, "Enemy should not collect Token.");
         
         if (tokenGO != null)
         {
@@ -182,7 +181,16 @@ public class PlayerIntegrationFromSampleSceneTest
     [UnityTest]
     public IEnumerator PlayerDies_WhenTouchingDeathZone()
     {
-        //playerGO.transform.position = deathZoneGO.transform.position;
+        var desiredPosition = new Vector3(2, 0, 0);
+        
+        var deathZoneGO = new GameObject("DeathZone");
+        deathZoneGO.transform.position = desiredPosition;
+        var collider = deathZoneGO.AddComponent<BoxCollider2D>();
+        collider.size = new Vector2(20, 20);
+        collider.isTrigger = true;
+        deathZoneGO.AddComponent<DeathZone>();
+        
+        playerGO.transform.position = deathZoneGO.transform.position;
         
         yield return new WaitForFixedUpdate();
         yield return null;
