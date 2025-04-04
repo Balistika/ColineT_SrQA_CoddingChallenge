@@ -116,7 +116,7 @@ public class PlayerIntegrationFromSampleSceneTest
         if (tokenGO != null)
         {
             tokenController.RemoveToken(token);
-            GameObject.DestroyImmediate(tokenGO);
+            GameObject.Destroy(tokenGO);
         }
     }
     
@@ -150,11 +150,11 @@ public class PlayerIntegrationFromSampleSceneTest
         if (tokenGO != null)
         {
             tokenController.RemoveToken(token);
-            GameObject.DestroyImmediate(tokenGO);
+            GameObject.Destroy(tokenGO);
         }
         
         if(enemyGo != null)
-            GameObject.DestroyImmediate(enemyGo);
+            GameObject.Destroy(enemyGo);
     }
     
     [UnityTest]
@@ -175,7 +175,7 @@ public class PlayerIntegrationFromSampleSceneTest
         Assert.IsFalse(playerController.health.IsAlive, "Player should be dead.");
         
         if(enemyGo != null)
-            GameObject.DestroyImmediate(enemyGo);
+            GameObject.Destroy(enemyGo);
     }
     
     [UnityTest]
@@ -197,5 +197,8 @@ public class PlayerIntegrationFromSampleSceneTest
         
         Assert.IsFalse(playerController.controlEnabled, "Player control should be disabled.");
         Assert.IsFalse(playerController.health.IsAlive, "Player should be dead.");
+        
+        if(deathZoneGO != null)
+            GameObject.Destroy(deathZoneGO);
     }
 }
