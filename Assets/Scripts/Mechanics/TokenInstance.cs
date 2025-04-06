@@ -40,9 +40,17 @@ namespace Platformer.Mechanics
             sprites = idleAnimation;
         }
 
+        public void Reset()
+        {
+            if (controller != null)
+                collected = false;
+            sprites = idleAnimation;
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             //only exectue OnPlayerEnter if the player collides with this token.
+            // Super expensive, Use tags instead
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player != null) OnPlayerEnter(player);
         }
