@@ -5,7 +5,6 @@ using Tests.Mocks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
-using TokenController = Platformer.Mechanics.TokenController;
 
 namespace Tests.PlayMode
 {
