@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Platformer.Core;
+using Platformer.Mechanics;
 using Tests.Mocks;
 
 namespace Tests.Editor

@@ -1,4 +1,4 @@
-using Platformer.Core;
+using Platformer.Mechanics;
 using Platformer.Services;
 using UnityEngine;
 
