@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public class JumpStateMachine
     {

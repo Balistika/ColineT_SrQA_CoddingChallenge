@@ -1,12 +1,10 @@
 using Platformer.Services;
 
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public class LandedState : BaseJumpState
     {
-        public LandedState(IPlayerController playerController) : base(playerController)
-        {
-        }
+        public LandedState(IPlayerController playerController) : base(playerController) { }
 
         public override void Enter() { }
 

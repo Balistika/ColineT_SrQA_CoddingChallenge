@@ -33,16 +33,13 @@ namespace Platformer.Mechanics
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        IInputController inputController;
+        JumpStateMachine jumpStateMachine;
 
         public Bounds Bounds => collider2d.bounds;
         public void EnableControl(bool enabled) => controlEnabled = enabled;
-        
-        private IInputController inputController;
-        private JumpStateMachine jumpStateMachine;
-
         public IInputController InputController => inputController;
         public JumpStateMachine JumpStateMachine => jumpStateMachine;
-        
         public AudioSource AudioSource => audioSource;
         public AudioClip JumpAudio => jumpAudio;
 

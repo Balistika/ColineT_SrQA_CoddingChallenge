@@ -4,9 +4,7 @@
     "references": [
         "Zenject",
         "Platformer.Game",
-        "Zenject-TestFramework",
-        "Platformer.Tests.Mock",
-        "UnityEngine.TestRunner"
+        "Platformer.Tests.Mock"
     ],
     "includePlatforms": [
         "Editor",

@@ -2,13 +2,11 @@ using Platformer.Gameplay;
 using Platformer.Services;
 using static Platformer.Core.Simulation;
 
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public class JumpingState : BaseJumpState
     {
-        public JumpingState(IPlayerController playerController) : base(playerController)
-        {
-        }
+        public JumpingState(IPlayerController playerController) : base(playerController) { }
 
         public override void Enter() { }
 

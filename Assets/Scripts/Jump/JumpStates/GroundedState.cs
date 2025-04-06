@@ -1,13 +1,10 @@
 using Platformer.Services;
-using UnityEngine;
 
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public class GroundedState : BaseJumpState
     {
-        public GroundedState(IPlayerController playerController) : base(playerController)
-        {
-        }
+        public GroundedState(IPlayerController playerController) : base(playerController) { }
 
         public override void Enter() { }
 

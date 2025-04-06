@@ -1,7 +1,6 @@
-using Platformer.Mechanics;
 using Platformer.Services;
 
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public abstract class BaseJumpState
     {

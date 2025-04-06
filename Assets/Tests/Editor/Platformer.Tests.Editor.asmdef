@@ -3,7 +3,6 @@
     "references": [
         "Platformer.Game",
         "Zenject",
-        "Zenject-TestFramework",
         "Platformer.Tests.Mock"
     ],
     "includePlatforms": [ "Editor" ],

@@ -2,15 +2,13 @@ using Platformer.Gameplay;
 using Platformer.Services;
 using static Platformer.Core.Simulation;
 
-namespace Platformer.Core
+namespace Platformer.Mechanics
 {
     public class InFlightState : BaseJumpState
     {
         private bool jumpStopped = false;
         
-        public InFlightState(IPlayerController playerController) : base(playerController)
-        {
-        }
+        public InFlightState(IPlayerController playerController) : base(playerController) { }
 
         public override void Enter() { }
 
